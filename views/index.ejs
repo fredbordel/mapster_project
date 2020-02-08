@@ -2,16 +2,50 @@
 <html lang="en">
   <head>
     <title>Home Page</title>
+    <!-- LEAFLET CSS LIBRARY -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <!-- LEAFLET JAVASCRIPT LIBRARY -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <header>
+      <img src= "mapster_full_logo" width="400" height="100"></img>
+      <span>LOGGED IN AS</span>
+      <span>CREATE NEW MAP</span>
+    </header>
+  <main class="container">
+    <section class="container__map">
+      <header class="map__header">
+          <span class="map__header__title">THIS IS MY MAP</span>
+          <span class="map__header__handle">@fred</span>
+        </header>
+    <div id="mymap"></div>
+    <script>
+        var mymap = L.map("mymap").setView([51.505, -0.09], 13);
+        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        accessToken: 'your.mapbox.access.token'
+        }).addTo(mymap);
+        </script>
+        <footer class="map__footer">
+            <button class="map__footer__modify">ALLO</button>
+            <button class="map__footer__favorite">HELLO</button>
+          </footer>
+    </section>
+  </main>
   </body>
 </html>
