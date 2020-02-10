@@ -19,7 +19,7 @@ let $sectionOfMap    = $('<section>').addClass('container__map');
 
 //CHILDREN OF BOSS
 let $headerOfMap     = $('<header>').addClass('map__header');
-let $divOfMap        = $('<div>').attr('id', 'mymap');
+let $divOfMap        = $('<div>').attr('id', `mymap-${Math.random().toString(36).substr(2,5)}`);
 let $scriptOfMap     = $('<script>');
 let $footerOfMap     = $('<footer>').addClass('map__footer');
 
