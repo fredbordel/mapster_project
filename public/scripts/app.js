@@ -98,7 +98,7 @@ $sectionOfMap
 
 };
 
-// module.exports
+
 
 
 //_____________________________________________
@@ -116,4 +116,4 @@ mymap.on('click', function() {
     }
   });
 */
->>>>>>> Stashed changes
+
