@@ -46,7 +46,53 @@ $(() => {
 //_________________________________
 // FUNCTION THAT CREATES A NEW MAP
 //________________________________|
+/*
+<section class="container__map">
+<header class="map__header">
+    <span class="map__header__title">PLACE TO NAP</span>
+    <span class="map__header__handle">@fred</span>
+  </header>
+<div id="mymap"></div>
+<script>
+  var mymap = L.map("mymap").setView([45.50, -73.56], 11);
+  L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
+  attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+  maxZoom: 18,
+  id: 'mapbox/streets-v11',
+  accessToken: 'your.mapbox.access.token'
+  }).addTo(mymap);
+  </script>
+  <footer class="map__footer">
+      <button class="map__footer__modify">MODIFY THIS MAP</button>
+      <button class="map__footer__favorite">ADD TO FAVORITE</button>
+    </footer>
+</section>
+*/
 let createNewMap = function(mapData) {
+
+const newMap = `
+<section class="container__map">
+<header class="map__header">
+    <span class="map__header__title">${mapData.title}</span>
+    <span class="map__header__handle">@${mapData.user}</span>
+  </header>
+<div id="mymap-${Math.random().toString(36).substr(2,5)}"></div>
+<script>
+  let mymap = L.map("mymap").setView([${mapData.lat}, ${mapData.lng}], 11);
+  L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
+  attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+  maxZoom: 18,
+  id: 'mapbox/streets-v11',
+  accessToken: 'your.mapbox.access.token'
+  }).addTo(mymap);
+  </script>
+  <footer class="map__footer">
+      <button class="map__footer__modify">MODIFY THIS MAP</button>
+      <button class="map__footer__favorite">ADD TO FAVORITE</button>
+    </footer>
+</section>
+`
+
 
 // BIG BIG BOSS = <main> class='container'
 
@@ -57,6 +103,7 @@ let $sectionOfMap    = $('<section>').addClass('container__map');
 let $headerOfMap     = $('<header>').addClass('map__header');
 let $divOfMap        = $('<div>').attr('id', `mymap-${Math.random().toString(36).substr(2,5)}`);
 let $scriptOfMap     = $('<script>');
+
 let $footerOfMap     = $('<footer>').addClass('map__footer');
 
 //CHILDREN OF headerOfMap
@@ -68,27 +115,6 @@ let $buttonModify    = $('<button>').addClass('map__footer__modify');
 let $buttonFavorite     = $('<button>').addClass('map__footer__favorite');
 
 
-//_______________________________________
-// APPENDING FROM GRAND-CHILDREN TO BOSS|
-//______________________________________|
-
-$footerOfMap
-    .append($buttonModify)
-    .append($buttonFavorite);
-
-$headerOfMap
-    .append($spanTitleOfMap)
-    .append($spanHandleOfMap);
-
-$sectionOfMap
-    .append($headerOfMap)
-    .append($divOfMap)
-    .append($scriptOfMap)
-    .append($footerOfMap);
-
-    return $sectionOfMap;
-
-};
 
 
 //_____________________________________________
