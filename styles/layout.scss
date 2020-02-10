@@ -29,6 +29,10 @@ font-weight: bold;
 font-size: 1.2em;
 }
 
+#createNew:hover {
+  opacity: 50%
+}
+
 //TESTING MAP
 #mymap {
   height: 30em;
@@ -77,9 +81,14 @@ color:rgb(0, 0, 0);
 text-align:center;
 }
 
-.map__footer__modify:hover {
+.map__footer__modify:hover,
+.map__footer__modify:focus {
   color: rgb(244, 0, 0);
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateX(-0.10em);
   }
+
+
 
 .map__footer__favorite {
   padding:0.35em 1.2em;
@@ -91,6 +100,9 @@ text-align:center;
   text-align:center;
 }
 
-.map__footer__favorite:hover {
+  .map__footer__favorite:hover,
+  .map__footer__favorite:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateX(-0.10em);
   color: rgb(44, 255, 11);
-  }
+}
