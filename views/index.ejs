@@ -44,7 +44,7 @@
         </script>
         <footer class="map__footer">
             <button class="map__footer__modify">MODIFY THIS MAP</button>
-            <button class="map__footer__favorite">LIKE</button>
+            <button class="map__footer__favorite">ADD TO FAVORITE</button>
           </footer>
     </section>
     <section class="container__map">
@@ -54,17 +54,17 @@
         </header>
     <div id="mymap1"></div>
     <script>
-        var mymap = L.map("mymap1").setView([45.50, -73.56], 11);
+        var mymap1 = L.map("mymap1").setView([45.50, -73.56], 11);
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
         maxZoom: 18,
         id: 'mapbox/streets-v11',
         accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
+        }).addTo(mymap1);
         </script>
         <footer class="map__footer">
             <button class="map__footer__modify">MODIFY THIS MAP</button>
-            <button class="map__footer__favorite">LIKE</button>
+            <button class="map__footer__favorite">ADD TO FAVORITE</button>
           </footer>
     </section>
   </main>

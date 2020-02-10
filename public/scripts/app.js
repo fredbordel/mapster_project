@@ -9,7 +9,9 @@ $(() => {
   });;
 });
 
-
+//_________________________________
+// FUNCTION THAT CREATES A NEW MAP
+//________________________________|
 let createNewMap = function(mapData) {
 
 // BIG BIG BOSS = <main> class='container'
@@ -53,3 +55,20 @@ $sectionOfMap
     return $sectionOfMap;
 
 };
+
+
+//_____________________________________________
+// FUNCTION THAT DISABLE AUTOMATIC ZOOM ON MAP|
+//____________________________________________|
+/*
+mymap.once('focus', function() { map.scrollWheelZoom.enable(); });
+
+mymap.on('click', function() {
+  if (map.scrollWheelZoom.enabled()) {
+    map.scrollWheelZoom.disable();
+    }
+    else {
+    map.scrollWheelZoom.enable();
+    }
+  });
+*/
