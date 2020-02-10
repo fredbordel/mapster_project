@@ -27,7 +27,16 @@
       </header>
       <form action="/createmap" method="POST">
         <textarea name="text" placeholder="Write your map name"></textarea>
-      <div class="mymap"></div>
+        <div id="mymap"></div>
+    <script>
+        var mymap = L.map("mymap").setView([45.50, -73.56], 11);
+        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        accessToken: 'your.mapbox.access.token'
+        }).addTo(mymap);
+        </script>
       <footer>
         <input type="submit" value="Create!">
       </footer>
