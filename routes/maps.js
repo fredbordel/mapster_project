@@ -16,10 +16,16 @@ module.exports = (db) => {
   router.post("/map", (req, res) => {
 
     const values = [req.body.title, req.body.lat, req.body.long, req.body.zoomLevel];
+    console.log(values)
 
-    db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4);`, values)
+    db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4);`, values).then((e, response) => {
 
-    res.redirect("/");
+      console.log('e', e)
+      console.log("response", response)
+      res.send({redirectUrl: "/"})
+    })
+
+
   });
   return router;
 };
