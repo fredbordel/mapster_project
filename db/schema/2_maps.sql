@@ -6,6 +6,5 @@ CREATE TABLE maps (
   latitude FLOAT NOT NULL,
   longitude FLOAT NOT NULL,
   zoom_level SMALLINT NOT NULL,
-  min_zoom_level SMALLINT NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
