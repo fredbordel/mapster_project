@@ -43,6 +43,21 @@
           </footer>
         </form>
     </section>
+  <form action="/create/map" method="POST" class="create__map">
+  <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
+  <input type="submit" value="Save Map!">
+
+        <div id="mymap"></div>
+
+      <footer>
+        <div class="hidden create__point">
+        <input type="text" name="title" placeholder="Point Title" id="point_title">
+        <input type="text" name="description" placeholder="Point Address" id="point_description">
+        <input type="url" name="image_url" placeholder="Point Image URL" id="point_image_url">
+        <input type="button" name='point_button' value="Create Point" id="create_point_button">
+        </div>
+      </footer>
+    </form>
 </body>
 </html>
 
