@@ -1,14 +1,16 @@
 // See: https://sass-lang.com/
 
+//______________
+// BODY STYLING|
+//_____________|
+
 body {
   background-color: rgb(255, 255, 255);
   font-size: 16px;
   font-family: 'Roboto Mono', monospace;
-
-  h1 {
-    color: #244751;
-  }
 }
+
+
 
 .header {
     margin-bottom: 5em;
@@ -24,14 +26,31 @@ body {
   margin-top: auto;
 }
 
+#logged {
+  margin-left: 1.5em;
+}
+
 #createNew {
 font-weight: bold;
 font-size: 1.2em;
 }
 
 #createNew:hover {
-  opacity: 50%
+  opacity: 80%;
+  cursor: pointer;
+  color: rgb(243, 47, 47);
+  text-shadow: 0.1em 0.1em #000000;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+//____________________
+// INDEX PAGE STYLING|
+//___________________|
 
 //////////////
 //TESTING MAPS
@@ -91,11 +110,11 @@ text-align:center;
 
 .map__footer__modify:hover,
 .map__footer__modify:focus {
-  color: rgb(244, 0, 0);
+  color: rgb(245, 69, 69);
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateX(-0.10em);
+  text-shadow: 0.09em 0.09em #000000;
   }
-
 
 
 .map__footer__favorite {
@@ -112,5 +131,12 @@ text-align:center;
   .map__footer__favorite:focus {
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateX(-0.10em);
-  color: rgb(44, 255, 11);
+  color: rgb(124, 252, 104);
+  text-shadow: 0.09em 0.09em #000000;
 }
+
+
+//_____________________
+// CREATE PAGE STYLING|
+//____________________|
+

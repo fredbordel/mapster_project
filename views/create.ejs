@@ -19,16 +19,22 @@
         <script type="text/javascript" src="/scripts/addPoint.js"> </script>
       </head>
 <body>
-    <header>
-        <i></i>
-        <h1>CREATE</h1>
-        <span class="hidden">LOGGED IN AS xxxx</span>
-        <span class="hidden">CREATE NEW MAP</span>
-      </header>
+  <header class='header'>
+    <div class='logoTitle'>
+        <img src="../images/Capture d’écran, le 2020-02-08 à 09.56.57.png", width="50" height="60"></img>
+        <p>Create</p>
+    </div>
+    <div class='header__spans'>
+    <span class='hidden' id='logged'>LOGGED IN AS</span>
+    <a href="http://localhost:8080/"><span class='hidden' id='createNew'>&#128073HOME</span></a>
+    </div>
+  </header>
 
       <form action="/create/map" method="POST" class="create__map">
         <textarea name="title" placeholder="Write your map name" class="create__map__textarea"></textarea>
         <div id="mymap3"></div>
+        <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
+        <div id="mymap"></div>
 
       <footer>
         <input type="submit" value="Create!">
