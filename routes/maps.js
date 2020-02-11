@@ -11,7 +11,13 @@ const mapclickPopup = require("../public/scripts/addPoint")
 
 module.exports = (db) => {
   router.get("/map", (req, res) => {
+    const userId = req.params.id;
+    if (userId){
         res.render("create");
+    } else {
+      res.alert("Please login to create a map");
+      res.render("index");
+    }
      })
   router.post("/map", (req, res) => {
 
@@ -21,7 +27,7 @@ module.exports = (db) => {
     db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4) RETURNING *; `, values).then((response) => {
 
 
-      console.log("response", response)
+
       res.send({redirectUrl: "/", response})
     })
 

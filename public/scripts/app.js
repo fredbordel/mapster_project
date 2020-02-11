@@ -1,4 +1,4 @@
-let mymap
+
 
 $(() => {
   // $.ajax({
@@ -39,14 +39,10 @@ $(() => {
     })
     // check with francis
     .then(data => {
-
-      window.location =  data.redirectUrl;
+     const newMap = createNewMap(data.response.rows[0])
+      console.log(newMap)
+      // window.location =  data.redirectUrl;
     })
-
-
-
-
-    // ajax post? how do I get the data to the form in the post route?
   })
 
 
