@@ -39,8 +39,8 @@ $(() => {
     })
     // check with francis
     .then(data => {
-      console.log(data)
-      // window.location =  data.redirectUrl;
+
+      window.location =  data.redirectUrl;
     })
 
 
