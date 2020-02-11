@@ -1,8 +1,8 @@
 // See: https://sass-lang.com/
 
-//______________
-// BODY STYLING|
-//_____________|
+//_________________________
+// BODY AND HEADER STYLING|
+//________________________|
 
 body {
   background-color: rgb(255, 255, 255);
@@ -64,6 +64,25 @@ a {
 }
 
 
+//_____________
+// MAP STYLING|
+//____________|
+
+
+#mymap {
+  height: 30em;
+  width: 80vw;
+}
+
+#mymap1 {
+  height: 30em;
+  width: 80vw;
+}
+
+//____________________
+// INDEX PAGE STYLING|
+//___________________|
+
 .container {
   display: flex;
   flex-direction: column;
@@ -106,6 +125,7 @@ text-align:center;
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateX(-0.10em);
   text-shadow: 0.09em 0.09em #000000;
+  cursor: pointer;
   }
 
 
@@ -125,6 +145,7 @@ text-align:center;
   transform: translateX(-0.10em);
   color: rgb(124, 252, 104);
   text-shadow: 0.09em 0.09em #000000;
+  cursor: pointer;
 }
 
 .create__point{
@@ -134,9 +155,9 @@ text-align:center;
 
 }
 
-.hidden{
-  display: none;
-}
+// .hidden{
+//   display: none;
+// }
 
 //_____________________
 // CREATE PAGE STYLING|

@@ -73,24 +73,6 @@ $(() => {
 
 
 
-  //_________________________________
-// FUNCTION THAT CREATES A NEW MAP
-//________________________________|
-
-  //_____________________________________
-    // FUNCTIONS LOAD NEW MAP TO INDEX FEED|
-  //_____________________________________|
-
-
-
-
-
-
-
-
-
-
-
 //Function that adds points to an existing map
 // how to differentiate between the diffrent maps across pages
 // how to add multiple poiints? a submit and a reset button at the bottom of the form?
@@ -113,7 +95,6 @@ $("#mymap").click(function (e){
 
 })
 
-// serialize() Ajax post
 $('#create_point_button').click(function(){
   $.post('http://localhost:8080/create/point',{
   title: $("#point_title").val(),
@@ -122,13 +103,17 @@ $('#create_point_button').click(function(){
   lat: marker.getLatLng().lat,
   lng: marker.getLatLng().lng
   }).then(e =>{
-    marker = undefined
-    console.log("marker", marker)
+    const latLng = marker.getLatLng()
+    const anchorMarker = L.marker([latLng.lat, latLng.lng])
+    let popup = L.popup()
+    .setLatLng([latLng.lat, latLng.lng])
+    .setContent(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}">`)
+    .openOn(mymap)
+    anchorMarker.bindPopup(popup)
     $('#point_description').val('')
     $("#point_title").val('')
     $('#point_image_url').val('')
-  }).then({
-
+    marker = undefined
   })
 
 })
@@ -138,9 +123,7 @@ $('#create_point_button').click(function(){
   // pageload ends here
 });
 
-//_________________________________
-// FUNCTION THAT CREATES A NEW MAP
-//________________________________|
+
 
 
 
