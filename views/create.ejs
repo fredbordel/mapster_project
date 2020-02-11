@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
         <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-        <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
         <!-- LEAFLET JAVASCRIPT LIBRARY -->
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -21,14 +21,15 @@
 <body>
   <header class='header'>
     <div class='logoTitle'>
-        <img src="../images/Capture d’écran, le 2020-02-08 à 09.56.57.png", width="50" height="60"></img>
-        <p>Create</p>
+        <img id="smallLogo" src="../images/Capture d’écran, le 2020-02-08 à 09.56.57.png", width="50" height="60"></img>
+        <p>CREATE</p>
     </div>
-    <div class='header__spans'>
+    <div class='header__spans2'>
          <span id='logged'>LOGGED IN AS</span>
          <a href="http://localhost:8080/"><span id='createNew'>&#128073HOME</span></a>
     </div>
   </header>
+  <mains class="container">
   <section class="container__map">
     <form action="/create/map" method="POST" class="create__map">
       <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
@@ -44,7 +45,7 @@
           </footer>
         </form>
     </section>
-
+  </mains>
 </body>
 </html>
 

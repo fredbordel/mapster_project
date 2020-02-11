@@ -12,7 +12,7 @@ body {
 
 //_____________
 // MAPS STYLING|
-//____________|
+//_____________|
 
 .mymap {
   height: 30em;
@@ -24,9 +24,10 @@ body {
   width: 80vw;
 }
 
-//____________________
-// INDEX PAGE STYLING|
-//___________________|
+
+//________________
+// HEADER STYLING|
+//_______________|
 
 .header {
     margin-bottom: 5em;
@@ -63,21 +64,6 @@ a {
   text-decoration: none;
 }
 
-
-//_____________
-// MAP STYLING|
-//____________|
-
-
-#mymap {
-  height: 30em;
-  width: 80vw;
-}
-
-#mymap1 {
-  height: 30em;
-  width: 80vw;
-}
 
 //____________________
 // INDEX PAGE STYLING|
@@ -148,12 +134,6 @@ text-align:center;
   cursor: pointer;
 }
 
-.create__point{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-
-}
 
 // .hidden{
 //   display: none;
@@ -165,4 +145,29 @@ text-align:center;
 
 .map__footer__sumbit {
   margin-left: auto;
+}
+
+.create__point{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.logoTitle {
+  display:flex;
+  flex-direction: row;
+}
+
+p {
+  font-size: 4em;
+}
+
+.header__spans2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5.5em;
+}
+
+#smallLogo {
+  margin-top: 4.6em;
 }
