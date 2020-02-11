@@ -1,4 +1,4 @@
-let mymap
+
 
 $(() => {
   // $.ajax({
@@ -12,7 +12,7 @@ $(() => {
 
 
 
-  mymap = L.map("mymap").setView([45.50, -73.56], 11);
+  let mymap = L.map("mymap").setView([45.50, -73.56], 11);
 
   L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
   attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
@@ -38,9 +38,8 @@ $(() => {
       title: $(".create__map__textarea").val()
     })
     // check with francis
-    .then(data => {
-
-      window.location =  data.redirectUrl;
+      .then(data => {
+      window.location =  data.redirectUrl
     })
 
 
@@ -85,6 +84,11 @@ let createNewMap = function(mapData) {
   // FUNCTIONS LOAD NEW MAP TO INDEX FEED|
   //_____________________________________|
 
+
+
+
+
+});
 
 
 

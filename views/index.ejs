@@ -16,6 +16,7 @@
     crossorigin=""></script>
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/loadMap.js"></script>
   </head>
 
   <body>
@@ -26,42 +27,13 @@
       <a href="http://localhost:8080/create/map"><span class='hidden' id='createNew'>&#128073CREATE NEW MAP</span></a>
       </div>
     </header>
-  <main class="container">
+  <main class="container" id="container">
     <section class="container__map">
       <header class="map__header">
           <span class="map__header__title">PLACE TO NAP</span>
           <span class="map__header__handle">@fred</span>
         </header>
     <div id="mymap"></div>
-    <script>
-        var mymap = L.map("mymap").setView([45.50, -73.56], 11);
-        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
-        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap);
-        </script>
-        <footer class="map__footer">
-            <button class="map__footer__modify">MODIFY THIS MAP</button>
-            <button class="map__footer__favorite">ADD TO FAVORITE</button>
-          </footer>
-    </section>
-    <section class="container__map">
-      <header class="map__header">
-          <span class="map__header__title">BEST COFFEES IN TOWN</span>
-          <span class="map__header__handle">@theo</span>
-        </header>
-    <div id="mymap1"></div>
-    <script>
-        var mymap1 = L.map("mymap1").setView([45.50, -73.56], 11);
-        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
-        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        accessToken: 'your.mapbox.access.token'
-        }).addTo(mymap1);
-        </script>
         <footer class="map__footer">
             <button class="map__footer__modify">MODIFY THIS MAP</button>
             <button class="map__footer__favorite">ADD TO FAVORITE</button>

@@ -13,6 +13,14 @@ module.exports = (db) => {
   router.get("/map", (req, res) => {
         res.render("create");
      })
+
+
+  router.get("/api/maps", (req, res) => {
+    db.query('SELECT * FROM maps ORDER BY id DESC;').then((response) => {
+      res.send(response.rows);
+    })
+  })
+
   router.post("/map", (req, res) => {
 
     const values = [req.body.title, req.body.lat, req.body.long, req.body.zoomLevel];
