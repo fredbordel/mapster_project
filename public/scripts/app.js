@@ -21,7 +21,7 @@ $(() => {
   accessToken: 'your.mapbox.access.token'
   }).addTo(mymap);
 
-  L.marker([45.50, -73.56]).addTo(mymap);
+
 
   $(".create__map").submit(function (event){
     event.preventDefault();
@@ -37,7 +37,7 @@ $(() => {
       zoomLevel,
       title: $(".create__map__textarea").val()
     })
-    // check with francis
+
     .then(data => {
      const newMap = createNewMap(data.response.rows[0])
       console.log(newMap)
@@ -80,24 +80,43 @@ $(() => {
 
 //Function that adds points to an existing map
 // how to differentiate between the diffrent maps across pages
-
+// how to add multiple poiints? a submit and a reset button at the bottom of the form?
+// how to
+// check api docs for how to check if user clicks on
+let marker;
 
 $("#mymap").click(function (e){
-
+  //toggle the form
   $(".create__point").removeClass("hidden");
   // get coordinates from leaflet method
   const clickLatLng = mymap.mouseEventToLatLng(e)
-  console.log(clickLatLng);
-
-  // istantiate marker and add it to the map
-  marker = L.marker([clickLatLng.lat, clickLatLng.lng]).addTo(mymap);
-  marker.bindPopup("Please fill out the form below").openPopup();
-
-//toggle the form
+  if(!marker){
+    marker = L.marker([clickLatLng.lat, clickLatLng.lng]).addTo(mymap);
+    marker.bindPopup("To Save a Point \n Please fill out the form below").openPopup();
+  } else {
+    marker.setLatLng([clickLatLng.lat, clickLatLng.lng]).openPopup();
+  }
 
 
 })
 
+// serialize() Ajax post
+$('#create_point_button').click(function(){
+  $.post('http://localhost:8080/create/point',{
+  title: $("#point_title").val(),
+  description: $('#point_description').val(),
+  image_url: $('#point_image_url').val(),
+  lat: marker.getLatLng().lat,
+  lng: marker.getLatLng().lng
+  }).then(e =>{
+    marker = undefined
+    console.log("marker", marker)
+    $('#point_description').val('')
+    $("#point_title").val('')
+    $('#point_image_url').val('')
+  })
+
+})
 
 
 

@@ -5,8 +5,10 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render("modify")
   })
-  router.post("/", (req, res) => {
-
+  router.post("/point", (req, res) => {
+  values = [req.body.title, req.body.description, req.body.image_url, req.body.lat, req.body.lng]
+  db.query(`INSERT INTO points (title, description, image_url, latitude, longitude)
+  VALUES($1, $2, $3, $4, $5) RETURNING *`, values)
   })
   return router;
 }
