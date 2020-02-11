@@ -6,6 +6,7 @@ const PORT       = process.env.PORT || 8080;
 const ENV        = process.env.ENV || "development";
 const express    = require("express");
 const bodyParser = require("body-parser");
+const cookieSession = require('cookie-session');
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
@@ -31,11 +32,19 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+// intialize cookie session
+app.use(cookieSession({
+  name: 'session',
+  keys: ['random', 'tea', 'sky', 'hello there', 'something else'],
+  maxAge: 1000 * 60 * 60 * 24
+}));
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const mapRoutes = require("./routes/maps");
+const loginRoutes = require('./routes/login')
 
 
 // Mount all resource routes
@@ -44,6 +53,8 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/maps", mapRoutes(db));
 app.use("/", mapRoutes(db));
+app.use("/", loginRoutes(db));
+// app.use("/login/:id", loginRoutes(db));
 app.use("/create", mapRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
@@ -53,7 +64,13 @@ app.use("/create", mapRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  const values = [req.session.userId]
+  db.query(`SELECT * FROM users WHERE id = $1`, values).then(data => {
+    const templateVars = {user: data.rows[0]};
+    res.render("index", templateVars);
+
+  })
+
 });
 
 

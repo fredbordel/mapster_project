@@ -127,6 +127,16 @@ text-align:center;
   text-shadow: 0.09em 0.09em #000000;
 }
 
+.create__point{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+
+}
+
+.hidden{
+  display: none;
+}
 
 //_____________________
 // CREATE PAGE STYLING|
