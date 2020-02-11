@@ -23,33 +23,24 @@ $(() => {
 
   L.marker([45.50, -73.56]).addTo(mymap);
 
-  // stopping the form in create/map from submitting
   $(".create__map").submit(function (event){
     event.preventDefault();
+
     const lat = mymap.getCenter().lat
+
     const long = mymap.getCenter().lng
     const zoomLevel = mymap.getZoom();
 
-    // Ajax request to give data to the post /create/map
     $.post('http://localhost:8080/create/map',{
       lat,
       long,
       zoomLevel,
       title: $(".create__map__textarea").val()
     })
-    // check with francis
-    .then(data => {
-      console.log(data)
-      // window.location =  data.redirectUrl;
-    })
-
-
-
-
+    // ajax post? how do I get the data to the form in the post route?
   })
 
-
-
+  console.log(mymap.getCenter())
 });
 
 //_________________________________
@@ -82,6 +73,8 @@ const newMap = `
 `
 return newMap;
 };
+
+
 
 
 //_____________________________________________
@@ -122,49 +115,4 @@ let $spanHandleOfMap = $('<span>').addClasse('map__header__handle');
 //CHILDREN OF footerOfMap
 let $buttonModify    = $('<button>').addClass('map__footer__modify');
 let $buttonFavorite     = $('<button>').addClass('map__footer__favorite');
-<<<<<<< HEAD
-=======
-
-
-//_______________________________________
-// APPENDING FROM GRAND-CHILDREN TO BOSS|
-//______________________________________|
-
-$footerOfMap
-    .append($buttonModify)
-    .append($buttonFavorite);
-
-$headerOfMap
-    .append($spanTitleOfMap)
-    .append($spanHandleOfMap);
-
-$sectionOfMap
-    .append($headerOfMap)
-    .append($divOfMap)
-    .append($scriptOfMap)
-    .append($footerOfMap);
-
-    return $sectionOfMap;
-
-};
-
-
-
-
-//_____________________________________________
-// FUNCTION THAT DISABLE AUTOMATIC ZOOM ON MAP|
-//____________________________________________|
-/*
-mymap.once('focus', function() { map.scrollWheelZoom.enable(); });
-
-mymap.on('click', function() {
-  if (map.scrollWheelZoom.enabled()) {
-    map.scrollWheelZoom.disable();
-    }
-    else {
-    map.scrollWheelZoom.enable();
-    }
-  });
->>>>>>> master
 */
-
