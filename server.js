@@ -50,7 +50,8 @@ const loginRoutes = require('./routes/login')
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use("/login/:id", loginRoutes(db));
+app.use("/", loginRoutes(db));
+// app.use("/login/:id", loginRoutes(db));
 app.use("/create", mapRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
@@ -60,7 +61,13 @@ app.use("/create", mapRoutes(db));
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  const values = [req.session.userId]
+  db.query(`SELECT * FROM users WHERE id = $1`, values).then(data => {
+    const templateVars = {user: data.rows[0]};
+    res.render("index", templateVars);
+
+  })
+
 });
 
 

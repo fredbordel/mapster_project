@@ -29,13 +29,18 @@
     <a href="http://localhost:8080/"><span class='hidden' id='createNew'>&#128073HOME</span></a>
     </div>
   </header>
+  <form action="/create/map" method="POST" class="create__map">
+  <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
 
-      <form action="/create/map" method="POST" class="create__map">
-        <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
         <div id="mymap"></div>
 
       <footer>
+        <div class="hidden create__point">
+        <input type="text" name="title" value="Point Title">
+        <input type="text" name="address" value="Point Address">
+        <input type="url" name="image_url" value="Point Image URL">
         <input type="submit" value="Create!">
+        </div>
       </footer>
     </form>
 </body>

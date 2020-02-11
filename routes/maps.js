@@ -12,43 +12,21 @@ const mapclickPopup = require("../public/scripts/addPoint")
 module.exports = (db) => {
   router.get("/map", (req, res) => {
     const userId = req.params.id;
-    if (userId){
+    // if (userId){
         res.render("create");
-    } else {
-      res.alert("Please login to create a map");
-      res.render("index");
-    }
+    // } else {
+    //   alert("Please login to create a map");
+    //   res.render("index");
+    // }
      })
   router.post("/map", (req, res) => {
-
     const values = [req.body.title, req.body.lat, req.body.long, req.body.zoomLevel];
     // console.log(values)
-
     db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4) RETURNING *; `, values).then((response) => {
-
-
-
       res.send({redirectUrl: "/", response})
     })
-
-
   });
   return router;
 };
 
 
-
-// router.get("/", (req, res) => {
-//   db.query(`SELECT * FROM users;`)
-//     .then(data => {
-//       const users = data.rows;
-//       res.json({ users });
-//     })
-//     .catch(err => {
-//       res
-//         .status(500)
-//         .json({ error: err.message });
-//     });
-// });
-// return router;
-// };
