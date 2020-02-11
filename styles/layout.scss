@@ -10,6 +10,24 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+//_____________
+// MAPS STYLING|
+//____________|
+
+.mymap {
+  height: 30em;
+  width: 80vw;
+}
+
+#mymap {
+  height: 30em;
+  width: 80vw;
+}
+
+//____________________
+// INDEX PAGE STYLING|
+//___________________|
+
 .header {
     margin-bottom: 5em;
     margin-top: 5em;
@@ -145,3 +163,6 @@ text-align:center;
 // CREATE PAGE STYLING|
 //____________________|
 
+.map__footer__sumbit {
+  margin-left: auto;
+}
