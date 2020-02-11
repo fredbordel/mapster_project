@@ -42,7 +42,7 @@ const mapRoutes = require("./routes/maps");
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/create", mapRoutes(db));
-
+app.use("/", mapRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 

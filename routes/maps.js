@@ -19,7 +19,7 @@ module.exports = (db) => {
 
     db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4);`, values)
 
-    res.render("index");
+    res.redirect("/");
   });
   return router;
 };
