@@ -115,7 +115,7 @@ let $buttonModify    = $('<button>').addClass('map__footer__modify');
 let $buttonFavorite     = $('<button>').addClass('map__footer__favorite');
 
 
-
+};
 
 //_____________________________________________
 // FUNCTION THAT DISABLE AUTOMATIC ZOOM ON MAP|
