@@ -76,7 +76,6 @@ $(() => {
 
 
 
-<<<<<<< HEAD
   //_________________________________
 // FUNCTION THAT CREATES A NEW MAP
 //________________________________|
@@ -121,7 +120,6 @@ let createNewMap = function(mapData) {
 });
 
 
-=======
 
 
 
@@ -155,7 +153,6 @@ $("#mymap").click(function (e){
 // FUNCTION THAT CREATES A NEW MAP
 //________________________________|
 
->>>>>>> master
 
 
 

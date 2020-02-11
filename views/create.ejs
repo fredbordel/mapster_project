@@ -25,35 +25,24 @@
         <p>Create</p>
     </div>
     <div class='header__spans'>
-         <span class='hidden' id='logged'>LOGGED IN AS</span>
-         <a href="http://localhost:8080/"><span class='hidden' id='createNew'>&#128073HOME</span></a>
+         <span id='logged'>LOGGED IN AS</span>
+         <a href="http://localhost:8080/"><span id='createNew'>&#128073HOME</span></a>
     </div>
   </header>
   <section class="container__map">
-      <form action="/create/map" method="POST" class="create__map">
-      <header class="map__header">
-          <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
-        </header>
-    <div id="mymap"></div>
-          <footer class="map__footer">
-              <input type="submit" value="Create!">
+    <form action="/create/map" method="POST" class="create__map">
+      <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
+        <div id="mymap"></div>
+          <footer>
+            <div class="hidden create__point">
+            <input type="text" name="title" value="Point Title">
+            <input type="text" name="address" value="Point Address">
+            <input type="url" name="image_url" value="Point Image URL">
+            <input type="submit" value="Create!">
+            </div>
           </footer>
         </form>
     </section>
-  <form action="/create/map" method="POST" class="create__map">
-  <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
-
-        <div id="mymap"></div>
-
-      <footer>
-        <div class="hidden create__point">
-        <input type="text" name="title" value="Point Title">
-        <input type="text" name="address" value="Point Address">
-        <input type="url" name="image_url" value="Point Image URL">
-        <input type="submit" value="Create!">
-        </div>
-      </footer>
-    </form>
 </body>
 </html>
 
@@ -75,3 +64,12 @@
 </form>
 -->
 
+<!-- <form action="/create/map" method="POST" class="create__map">
+  <header class="map__header">
+      <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
+    </header>
+<div id="mymap"></div>
+      <footer class="map__footer">
+          <input type="submit" value="Create!">
+      </footer>
+    </form> -->
