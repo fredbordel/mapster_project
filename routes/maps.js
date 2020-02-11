@@ -19,6 +19,14 @@ module.exports = (db) => {
     //   res.render("index");
     // }
      })
+
+
+  router.get("/api/maps", (req, res) => {
+    db.query('SELECT * FROM maps ORDER BY id DESC;').then((response) => {
+      res.send(response.rows);
+    })
+  })
+
   router.post("/map", (req, res) => {
     const values = [req.body.title, req.body.lat, req.body.long, req.body.zoomLevel];
     db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4) RETURNING *; `, values).then((response) => {

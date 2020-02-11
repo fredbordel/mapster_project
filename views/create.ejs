@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin=""/>
-
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
         <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
         <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -25,10 +25,21 @@
         <p>Create</p>
     </div>
     <div class='header__spans'>
-    <span class='hidden' id='logged'>LOGGED IN AS</span>
-    <a href="http://localhost:8080/"><span class='hidden' id='createNew'>&#128073HOME</span></a>
+         <span class='hidden' id='logged'>LOGGED IN AS</span>
+         <a href="http://localhost:8080/"><span class='hidden' id='createNew'>&#128073HOME</span></a>
     </div>
   </header>
+  <section class="container__map">
+      <form action="/create/map" method="POST" class="create__map">
+      <header class="map__header">
+          <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
+        </header>
+    <div id="mymap"></div>
+          <footer class="map__footer">
+              <input type="submit" value="Create!">
+          </footer>
+        </form>
+    </section>
   <form action="/create/map" method="POST" class="create__map">
   <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
   <input type="submit" value="Save Map!">
@@ -46,4 +57,22 @@
     </form>
 </body>
 </html>
+
+
+
+
+<!--
+</div>
+<div class='header__spans'>
+<span class='hidden' id='logged'>LOGGED IN AS</span>
+<a href="http://localhost:8080/"><span class='hidden' id='createNew'>&#128073HOME</span></a>
+</div>
+  <form action="/create/map" method="POST" class="create__map">
+    <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
+    <div id="mymap"></div>
+  <footer>
+    <input type="submit" value="Create!">
+  </footer>
+</form>
+-->
 

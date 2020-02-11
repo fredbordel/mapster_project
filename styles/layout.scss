@@ -10,7 +10,23 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
+//_____________
+// MAPS STYLING|
+//____________|
 
+.mymap {
+  height: 30em;
+  width: 80vw;
+}
+
+#mymap {
+  height: 30em;
+  width: 80vw;
+}
+
+//____________________
+// INDEX PAGE STYLING|
+//___________________|
 
 .header {
     margin-bottom: 5em;
@@ -47,24 +63,6 @@ a {
   text-decoration: none;
 }
 
-
-//____________________
-// INDEX PAGE STYLING|
-//___________________|
-
-//////////////
-//TESTING MAPS
-#mymap {
-  height: 30em;
-  width: 80vw;
-}
-
-#mymap1 {
-  height: 30em;
-  width: 80vw;
-}
-//TESTIN MAPS
-/////////////
 
 .container {
   display: flex;
@@ -144,3 +142,6 @@ text-align:center;
 // CREATE PAGE STYLING|
 //____________________|
 
+.map__footer__sumbit {
+  margin-left: auto;
+}

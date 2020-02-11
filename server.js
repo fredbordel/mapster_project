@@ -47,10 +47,13 @@ const mapRoutes = require("./routes/maps");
 const loginRoutes = require('./routes/login')
 const pointRoutes = require('./routes/points')
 
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/api/maps", mapRoutes(db));
+app.use("/", mapRoutes(db));
 app.use("/", loginRoutes(db));
 // app.use("/login/:id", loginRoutes(db));
 app.use("/create", pointRoutes(db));
