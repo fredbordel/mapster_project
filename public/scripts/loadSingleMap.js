@@ -20,7 +20,7 @@ const loadSingleMap = function(mapId) {
    </script>
    <footer class="map__footer">
        <button class="map__footer__modify">MODIFY THIS MAP</button>
-       <button class="map__footer__favorite">ADD TO FAVORITE</button>
+       <button id="${mapData.id} "class="map__footer__favorite">ADD TO FAVORITE</button>
    </footer>
  </section>
  `
