@@ -80,7 +80,7 @@ $(() => {
 // check api docs for how to check if user clicks on
 let marker;
 
-$("#mymap").click(function (e){
+const enableAddPoint = function (e){
   //toggle the form
   $(".create__point").removeClass("hidden");
   // get coordinates from leaflet method
@@ -91,9 +91,23 @@ $("#mymap").click(function (e){
   } else {
     marker.setLatLng([clickLatLng.lat, clickLatLng.lng]).openPopup();
   }
+}
 
 
+
+$("#toggleAdd").click(()=> {
+if($("#toggleAdd").hasClass('active')){
+  $("#toggleAdd").removeClass('active')
+  $("#mymap").off()
+  $("#toggleAdd").text('Add Points')
+} else {
+  $("#toggleAdd").addClass('active')
+  $("#mymap").click(enableAddPoint)
+  $("#toggleAdd").text('Review Points')
+}
 })
+
+$("#mymap").click(enableAddPoint)
 
 $('#create_point_button').click(function(){
   $.post('http://localhost:8080/create/point',{
@@ -109,7 +123,7 @@ $('#create_point_button').click(function(){
     .setLatLng([latLng.lat, latLng.lng])
     .setContent(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}">`)
     .openOn(mymap)
-    anchorMarker.bindPopup(popup)
+    anchorMarker.bindPopup(popup).openPopup()
     $('#point_description').val('')
     $("#point_title").val('')
     $('#point_image_url').val('')
