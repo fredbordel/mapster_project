@@ -100,10 +100,12 @@ if($("#toggleAdd").hasClass('active')){
   $("#toggleAdd").removeClass('active')
   $("#mymap").off()
   $("#toggleAdd").text('Add Points')
+  $(".create__point").removeClass("hidden");
 } else {
   $("#toggleAdd").addClass('active')
   $("#mymap").click(enableAddPoint)
   $("#toggleAdd").text('Review Points')
+  $(".create__point").addClass("hidden");
 }
 })
 
