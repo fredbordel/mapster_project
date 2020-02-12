@@ -33,23 +33,28 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const usersRoutes = require("./routes/users");
+const usersRouter = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
-const mapRoutes = require("./routes/maps");
+const mapRouter = require("./routes/maps");
 const loginRoutes = require('./routes/login')
 const pointRoutes = require('./routes/points')
 
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
+app.use(usersRouter(db));
+app.use(mapRouter(db));
 app.use("/api/widgets", widgetsRoutes(db));
-app.use("/api/maps", mapRoutes(db));
-app.use("/", mapRoutes(db));
+
+
+// app.use("/api/maps", mapRoutes(db));
+// app.use("/", mapRoutes(db));
+// app.use("/create", mapRoutes(db));
+
 //app.use("/", loginRoutes(db));
 // app.use("/login/:id", loginRoutes(db));
 app.use("/create", pointRoutes(db));
-app.use("/create", mapRoutes(db));
+
 // Note: mount other resources here, using the same pattern above
 
 
@@ -62,12 +67,6 @@ app.get("/", (req, res) => {
 
 
 
-// app.get("/", (req, res) => {
-//   const values = [req.session.userId]
-//   db.query(`SELECT * FROM users WHERE id = $1`, values).then(data => {
-//     const templateVars = {user: data.rows[0]};
-//     res.render("index", templateVars);
-//   })
 
 
 

@@ -9,7 +9,7 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
+  router.get("/api/users", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
@@ -23,3 +23,10 @@ module.exports = (db) => {
   });
   return router;
 };
+
+// app.get("/", (req, res) => {
+//   const values = [req.session.userId]
+//   db.query(`SELECT * FROM users WHERE id = $1`, values).then(data => {
+//     const templateVars = {user: data.rows[0]};
+//     res.render("index", templateVars);
+//   })
