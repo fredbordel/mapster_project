@@ -24,9 +24,28 @@ module.exports = (db) => {
   return router;
 };
 
-// app.get("/", (req, res) => {
-//   const values = [req.session.userId]
-//   db.query(`SELECT * FROM users WHERE id = $1`, values).then(data => {
-//     const templateVars = {user: data.rows[0]};
-//     res.render("index", templateVars);
-//   })
+
+router.get("/:id", (req, res) => {
+  let userId = req.params.map_id
+  console.log(userId);
+  res.render("myProfile");
+})
+
+
+router.get("/", (req, res) => {
+
+  if (req.session.userId) {
+    const values = [req.session.userId]
+      db.query(`SELECT * FROM users WHERE id = $1`, values).then(data => {
+        const templateVars = {user: data.rows[0]};
+        res.render("index", templateVars);
+    });
+  } else {
+    const templateVars = {user: null};
+    res.render("index", templateVars);
+  }
+});
+
+
+
+
