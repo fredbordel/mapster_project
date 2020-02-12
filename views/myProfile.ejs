@@ -41,7 +41,7 @@
     <!-- Favourites Section -->
     <section class="maps_container">
     <section class="user_favorites">
-      <div id="mymap1"></div>
+      <div id="mymap1" class="column_maps"></div>
       <script>
       let mymap1 = L.map("mymap1").setView([45.50, -73.56], 11);
       L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
@@ -51,10 +51,20 @@
       accessToken: 'your.mapbox.access.token'
       }).addTo(mymap1);
       </script>
+       <div id="mymap4" class="column_maps"></div>
+       <script>
+       let mymap4 = L.map("mymap4").setView([45.50, -73.56], 11);
+       L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
+       attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+       maxZoom: 18,
+       id: 'mapbox/streets-v11',
+       accessToken: 'your.mapbox.access.token'
+       }).addTo(mymap4);
+       </script>
     </section>
     <!-- Contributions Section-->
     <section class="user_contributions">
-        <div id="mymap2"></div>
+        <div id="mymap2" class="column_maps"></div>
         <script>
         let mymap2 = L.map("mymap2").setView([45.50, -73.56], 11);
         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
@@ -64,6 +74,16 @@
         accessToken: 'your.mapbox.access.token'
         }).addTo(mymap2);
         </script>
+         <div id="mymap3" class="column_maps"></div>
+         <script>
+         let mymap3 = L.map("mymap3").setView([45.50, -73.56], 11);
+         L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
+         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+         maxZoom: 18,
+         id: 'mapbox/streets-v11',
+         accessToken: 'your.mapbox.access.token'
+         }).addTo(mymap3);
+         </script>
     </section>
   </section>
     <input type="button">Show More</input>

@@ -15,22 +15,32 @@ body {
 //_____________|
 
 .mymap {
-  height: 30em;
+  height: 30rem;
   width: 80vw;
 }
 
 #mymap {
-  height: 30em;
+  height: 30rem;
   width: 80vw;
 }
 
 #mymap1 {
-  height: 15em;
+  height: 15rem;
   width: 40vw;
 }
 
 #mymap2 {
-  height: 15em;
+  height: 15rem;
+  width: 40vw;
+}
+
+#mymap3 {
+  height: 15rem;
+  width: 40vw;
+}
+
+#mymap4 {
+  height: 15rem;
   width: 40vw;
 }
 
@@ -40,8 +50,8 @@ body {
 //_______________|
 
 .header {
-    margin-bottom: 5em;
-    margin-top: 5em;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -54,19 +64,19 @@ body {
 }
 
 #logged {
-  margin-left: 1.5em;
+  margin-left: 1.5rem;
 }
 
 #createNew {
 font-weight: bold;
-font-size: 1.2em;
+font-size: 1.2rem;
 }
 
 #createNew:hover {
   opacity: 80%;
   cursor: pointer;
   color: rgb(243, 47, 47);
-  text-shadow: 0.1em 0.1em #000000;
+  text-shadow: 0.1rem 0.1rem #000000;
 }
 
 a {
@@ -89,7 +99,7 @@ a {
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 }
 
 .map__header {
@@ -98,7 +108,7 @@ justify-content: space-between;
 }
 
 .map__header__title {
-  font-size: 1.4em;
+  font-size: 1.4rem;
 }
 
 .map__footer {
@@ -106,10 +116,10 @@ margin-left: auto;
 }
 
 .map__footer__modify {
-padding:0.35em 1.2em;
-border:0.1em solid rgb(0, 0, 0);
-margin:0 0.3em 0.3em 0;
-border-radius:0.12em;
+padding:0.35rem 1.2rem;
+border:0.1rem solid rgb(0, 0, 0);
+margin:0 0.3rem 0.3rem 0;
+border-radius:0.12rem;
 box-sizing: border-box;
 color:rgb(0, 0, 0);
 text-align:center;
@@ -118,18 +128,18 @@ text-align:center;
 .map__footer__modify:hover,
 .map__footer__modify:focus {
   color: rgb(245, 69, 69);
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateX(-0.10em);
-  text-shadow: 0.09em 0.09em #000000;
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
+  text-shadow: 0.09rem 0.09rem #000000;
   cursor: pointer;
   }
 
 
 .map__footer__favorite {
-  padding:0.35em 1.2em;
-  border:0.1em solid rgb(0, 0, 0);
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.12em;
+  padding:0.35rem 1.2rem;
+  border:0.1rem solid rgb(0, 0, 0);
+  margin:0 0.3rem 0.3rem 0;
+  border-radius:0.12rem;
   box-sizing: border-box;
   color:rgb(0, 0, 0);
   text-align:center;
@@ -137,10 +147,10 @@ text-align:center;
 
   .map__footer__favorite:hover,
   .map__footer__favorite:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateX(-0.10em);
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
   color: rgb(124, 252, 104);
-  text-shadow: 0.09em 0.09em #000000;
+  text-shadow: 0.09rem 0.09rem #000000;
   cursor: pointer;
 }
 
@@ -161,8 +171,8 @@ text-align:center;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  margin-bottom: 3em;
-  margin-top: 0.5em;
+  margin-bottom: 3rem;
+  margin-top: 0.5rem;
 }
 
 .logoTitle {
@@ -171,34 +181,34 @@ text-align:center;
 }
 
 p {
-  font-size: 4em;
+  font-size: 4rem;
 }
 
 .header__spans2 {
   display: flex;
   flex-direction: column;
-  margin-top: 5.5em;
+  margin-top: 5.5rem;
 }
 
 #smallLogo {
-  margin-top: 4.6em;
+  margin-top: 4.6rem;
 }
 
 .instructions {
   background-color: black;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  margin-bottom: 1.7em;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  margin-bottom: 1.7rem;
 }
 
 .instructions__list {
   color: white;
-  margin-left: 7.5em;
+  margin-left: 7.5rem;
 }
 
 .header2 {
-  margin-bottom: 0.5em;
-  margin-top: 1em;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -211,10 +221,10 @@ p {
 
 
 #create_point_button {
-  padding:0.35em 1.2em;
-  border:0.1em solid rgb(0, 0, 0);
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.12em;
+  padding:0.35rem 1.2rem;
+  border:0.1rem solid rgb(0, 0, 0);
+  margin:0 0.3rem 0.3rem 0;
+  border-radius:0.12rem;
   box-sizing: border-box;
   color:rgb(0, 0, 0);
   text-align:center;
@@ -222,18 +232,18 @@ p {
 
 #create_point_button:hover,
 #create_point_button:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateX(-0.10em);
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
   color: rgb(124, 252, 104);
-  text-shadow: 0.09em 0.09em #000000;
+  text-shadow: 0.09rem 0.09rem #000000;
   cursor: pointer;
 }
 
 #create_map_button {
-  padding:0.35em 1.2em;
-  border:0.1em solid rgb(0, 0, 0);
-  margin:0 0.3em 0.3em 0;
-  border-radius:0.12em;
+  padding:0.35rem 1.2rem;
+  border:0.1rem solid rgb(0, 0, 0);
+  margin:0 0.3rem 0.3rem 0;
+  border-radius:0.12rem;
   box-sizing: border-box;
   color:rgb(0, 0, 0);
   text-align:center;
@@ -242,20 +252,20 @@ p {
 #create_map_button:hover,
 #create_map_button:focus {
   color: rgb(245, 69, 69);
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateX(-0.10em);
-  text-shadow: 0.09em 0.09em #000000;
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
+  text-shadow: 0.09rem 0.09rem #000000;
   cursor: pointer;
 }
 
 input {
   border: none;
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1rem solid black;
 }
 
 textarea {
   border: none;
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1rem solid black;
 }
 
 textarea:focus, input:focus{
@@ -270,15 +280,15 @@ textarea:focus, input:focus{
   justify-content: space-evenly;
   }
   .mymap {
-    height: 50em;
+    height: 50rem;
     width: 80vw;
   }
   #mymap {
-    height: 50em;
+    height: 50rem;
     width: 80vw;
   }
   input {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 }
 
@@ -290,8 +300,7 @@ textarea:focus, input:focus{
 .user_profile {
   display: flex;
   flex-direction: column;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin: 0 5rem ;
 }
 
 .maps_container {
@@ -303,7 +312,19 @@ justify-content: space-between;
 .user_profile__colum_headers {
   display: flex;
   justify-content: space-between;
+  margin: 0 3rem;
 }
 
+.user_favorites {
+  width: 50%;
 
+}
 
+.user_contributions {
+  width: 50%;
+
+}
+
+.column_maps {
+margin: 3rem 1.5rem;
+}
