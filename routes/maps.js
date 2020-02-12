@@ -29,7 +29,7 @@ module.exports = (db) => {
   router.get("/map/:map_id", (req, res) => {
     let mapId = req.params.map_id
     console.log(mapId);
-    res.render("view_map");
+    res.render("view_map", { mapId });
   })
 
 
@@ -45,13 +45,25 @@ router.post("/create/map", (req, res) => {
   })
 });
 
+
+
 // What does this function do: READ
 // This function returns an array of map objects from the newest to oldest.
+  router.get("/api/maps/:id", (req, res) => {
+    let mapId = req.params.id
+    db.query('SELECT * FROM maps WHERE id = $1 ORDER BY id DESC;', [mapId]).then((response) => {
+      res.send(response.rows);
+    })
+  })
+
   router.get("/api/maps", (req, res) => {
     db.query('SELECT * FROM maps ORDER BY id DESC;').then((response) => {
       res.send(response.rows);
     })
   })
+
+
+
 
   // TODO:
   // What does this function do: UPDATE

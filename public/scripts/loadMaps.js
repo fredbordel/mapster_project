@@ -10,12 +10,13 @@ $(() => {
      }
  });
 
- let createNewMap = function(mapData,i) {
+
+ let createNewMap = function(mapData, i) {
 
   return  `
   <section class="container__map">
   <header class="map__header">
-      <span class="map__header__title">${mapData.title}</span>
+      <a href="/map/${mapData.id}"><span class="map__header__title">${mapData.title}</span></a>
       <span class="map__header__handle">@EMPTYFORNOW</span>
     </header>
   <div id="mymap${i}" class="mymap"></div>
@@ -35,5 +36,4 @@ $(() => {
   </section>
   `
   };
-
 });
