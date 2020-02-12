@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router  = express.Router();
-const mapclickPopup = require("../public/scripts/addPoint")
 
 
 

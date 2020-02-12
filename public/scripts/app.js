@@ -96,14 +96,17 @@ const enableAddPoint = function (e){
 
 
 $("#toggleAdd").click(()=> {
+
 if($("#toggleAdd").hasClass('active')){
   $("#toggleAdd").removeClass('active')
   $("#mymap").off()
   $("#toggleAdd").text('Add Points')
+  $(".create__point").addClass("hidden");
 } else {
   $("#toggleAdd").addClass('active')
   $("#mymap").click(enableAddPoint)
   $("#toggleAdd").text('Review Points')
+  $(".create__point").removeClass("hidden");
 }
 })
 
@@ -119,11 +122,11 @@ $('#create_point_button').click(function(){
   }).then(e =>{
     const latLng = marker.getLatLng()
     const anchorMarker = L.marker([latLng.lat, latLng.lng])
-    let popup = L.popup()
-    .setLatLng([latLng.lat, latLng.lng])
-    .setContent(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}">`)
-    .openOn(mymap)
-    anchorMarker.bindPopup(popup).openPopup()
+    // let popup = L.popup()
+    // .setLatLng([latLng.lat, latLng.lng])
+    // .setContent(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}">`)
+    // .openOn(mymap)
+    anchorMarker.bindPopup(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}" height=40>`).openPopup()
     $('#point_description').val('')
     $("#point_title").val('')
     $('#point_image_url').val('')
