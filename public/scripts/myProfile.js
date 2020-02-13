@@ -18,6 +18,17 @@ $(() => {
     id: 'mapbox/streets-v11',
     accessToken: 'your.mapbox.access.token'
     }).addTo(myFavmap${i});
+
+    myFavmap${i}.scrollWheelZoom.disable();
+
+    myFavmap${i}.on('click', function() {
+      if (myFavmap${i}.scrollWheelZoom.enabled()) {
+        myFavmap${i}.scrollWheelZoom.disable();
+        }
+        else {
+          myFavmap${i}.scrollWheelZoom.enable();
+        }
+      });
     </script>
     <footer class="map__footer">
     <a href="/modify/map/${mapData.id}"><button class="map__footer__modify">MODIFY THIS MAP</button></a>
