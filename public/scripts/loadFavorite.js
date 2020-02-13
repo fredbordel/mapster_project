@@ -1,17 +1,12 @@
 
 $(() => {
-
-
-
-
 $("body").on("click",".map__footer__favorite", function(event) {
   $.ajax({
     method: "POST",
     url: "/favorites",
     data: {id: event.target.id}
   }).then(() => {
-    $(this).css("background-color", "green")
-
+    $(this).css("background-color", "grey")
   });
 });
 });

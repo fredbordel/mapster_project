@@ -93,6 +93,10 @@ justify-content: space-between;
   font-size: 1.4rem;
 }
 
+.map__header__title:hover {
+  cursor: pointer;
+}
+
 .map__footer {
 margin-left: auto;
 }
@@ -278,6 +282,7 @@ textarea:focus, input:focus{
 
 .modify__point{
   display: flex;
+}
 //______________________
 // STYLING PROFILE PAGE|
 //_____________________|

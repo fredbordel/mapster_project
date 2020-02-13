@@ -13,9 +13,6 @@ $(() => {
   // }
 
 
-
-
-
    $.ajax({
      method: "GET",
      url: "/api/maps"
@@ -32,7 +29,7 @@ $(() => {
   return  `
   <section class="container__map">
   <header class="map__header">
-  <span class="map__header__title">${mapData.title}</span>
+  <a href="/map/${mapData.id}"><span class="map__header__title">${mapData.title}</span></a>
   <span class="map__header__handle">@EMPTYFORNOW</span>
   </header>
   <div id="mymap${i}" class="mymap"></div>
@@ -59,17 +56,10 @@ $(() => {
   </script>
   <footer class="map__footer">
   <button class="map__footer__modify">MODIFY THIS MAP</button>
-  <button class="map__footer__favorite">ADD TO FAVORITE</button>
+  <button class="map__footer__favorite" id="${mapData.id}">ADD TO FAVORITE</button>
   </footer>
   </section>
   `
 };
-
-
-
-
-
-
-
 
 });
