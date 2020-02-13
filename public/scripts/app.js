@@ -52,7 +52,7 @@ $(() => {
       <span class="map__header__title">${mapData.title}</span>
       <span class="map__header__handle">@EMPTYFORNOW</span>
     </header>
-  <div id="mymap"></div>
+  <div id="mymap" class="mymap"></div>
   <script>
     let mymap = L.map("mymap").setView([${mapData.latitude}, ${mapData.longitude}], ${mapData.zoom_level});
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {

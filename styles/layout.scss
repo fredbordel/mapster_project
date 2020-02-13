@@ -19,30 +19,12 @@ body {
   width: 80vw;
 }
 
-#mymap {
-  height: 30rem;
-  width: 80vw;
-}
-
-#mymap1 {
+.mymap2 {
   height: 15rem;
   width: 40vw;
 }
 
-#mymap2 {
-  height: 15rem;
-  width: 40vw;
-}
 
-#mymap3 {
-  height: 15rem;
-  width: 40vw;
-}
-
-#mymap4 {
-  height: 15rem;
-  width: 40vw;
-}
 
 
 //________________
@@ -327,4 +309,9 @@ justify-content: space-between;
 
 .column_maps {
 margin: 3rem 1.5rem;
+}
+
+.container__map__fav {
+  margin: 3rem 0;
+  margin-right: 3rem;
 }
