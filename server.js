@@ -43,6 +43,7 @@ const widgetsRoutes = require("./routes/widgets");
 const mapRouter = require("./routes/maps");
 const loginRoutes = require('./routes/login')
 const pointRoutes = require('./routes/points')
+const favoriteRoutes = require('./routes/favorites');
 
 
 // Mount all resource routes
@@ -50,19 +51,15 @@ const pointRoutes = require('./routes/points')
 app.use(usersRouter(db));
 app.use(mapRouter(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.use("/create", pointRoutes(db));
+app.use(favoriteRoutes(db));
 
-
+// Note: mount other resources here, using the same pattern above
 // app.use("/api/maps", mapRoutes(db));
 // app.use("/", mapRoutes(db));
 // app.use("/create", mapRoutes(db));
-
 //app.use("/", loginRoutes(db));
 // app.use("/login/:id", loginRoutes(db));
-app.use("/create", pointRoutes(db));
-
-// Note: mount other resources here, using the same pattern above
-
-
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).

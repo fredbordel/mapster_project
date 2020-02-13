@@ -24,8 +24,8 @@ module.exports = (db) => {
   return router;
 };
 
-
-router.get("/:id", (req, res) => {
+// PROFILE PAGE VIEW
+router.get("/profile/:id", (req, res) => {
   let userId = req.params.map_id
   console.log(userId);
   res.render("myProfile");
@@ -45,6 +45,8 @@ router.get("/", (req, res) => {
     res.render("index", templateVars);
   }
 });
+
+
 
 
 

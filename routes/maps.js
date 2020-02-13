@@ -28,7 +28,6 @@ module.exports = (db) => {
 
   router.get("/map/:map_id", (req, res) => {
     let mapId = req.params.map_id
-    console.log(mapId);
     res.render("view_map", { mapId });
   })
 
