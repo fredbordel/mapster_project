@@ -2,15 +2,53 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    res.render("modify")
+
+
+  router.get("/api/points/", (req, res) => {
+    db.query('SELECT * FROM points ORDER BY id DESC')
+      .then(data => {
+        const points = data.rows;
+        res.json(points);
   })
-  router.post("/point", (req, res) => {
-    values = [req.body.title, req.body.description, req.body.image_url, req.body.lat, req.body.lng]
-    db.query(`INSERT INTO points (title, description, image_url, latitude, longitude)
-    VALUES($1, $2, $3, $4, $5) RETURNING *`, values)
-    .then(data => res.json({error:false, new_point: data}) )
-    .catch(data => res.json({error:true, new_point: data}) )
-    })
+})
+
+
+  router.get("/api/points/:id", (req, res) => {
+    let mapId = req.params.id
+    db.query('SELECT * FROM points WHERE map_id = $1;', [mapId])
+      .then(data => {
+        const points = data.rows;
+        res.json(points);
+  })
+})
+  router.post("/create/point", (req, res) => {
+    const localStorageArr = req.body.storageArr
+    for (let i = 0; i < localStorageArr.length; i++) {
+     let values = [
+       localStorageArr[i].title,
+       localStorageArr[i].description,
+       localStorageArr[i].image_url,
+       localStorageArr[i].lat,
+       localStorageArr[i].lng,
+       localStorageArr[i].map_id
+      ]
+      db.query(`INSERT INTO points (title, description, image_url, latitude, longitude, map_id)
+      VALUES($1, $2, $3, $4, $5, $6) RETURNING *`, values)
+      .then(data => {
+        if(i === localStorageArr.length-1){
+          res.json({error:false, new_point: data})
+        }
+        })
+      .catch(data => {
+        if(i === localStorageArr.length-1){
+          res.json({error:true, new_point: data})
+        }
+      })
+
+      }
+  })
+
+
+
   return router;
 }

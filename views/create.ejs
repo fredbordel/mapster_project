@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
         <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-        <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
         <!-- LEAFLET JAVASCRIPT LIBRARY -->
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -19,21 +19,33 @@
         <script type="text/javascript" src="/scripts/addPoint.js"> </script>
       </head>
 <body>
-  <header class='header'>
+  <header class='header2'>
     <div class='logoTitle'>
-        <img src="../images/Capture d’écran, le 2020-02-08 à 09.56.57.png", width="50" height="60"></img>
-        <p>Create</p>
+        <a href="/"><img id="smallLogo" src="../images/Capture d’écran, le 2020-02-08 à 09.56.57.png", width="50" height="60"></img></a>
+        <p>CREATE</p>
     </div>
-    <div class='header__spans'>
+    <div class='header__spans2'>
          <span id='logged'>LOGGED IN AS</span>
-         <a href="http://localhost:8080/"><span id='createNew'>&#128073HOME</span></a>
+         <a href="/"><span id='createNew'>&#128073HOME</span></a>
     </div>
   </header>
+  <div class="instructions">
+    <ol class="instructions__list">
+      <li>Give your map a nice name.</li>
+      <li>Create a point by clicking on the map.</li>
+      <li>Add a title, description and image url to your point, using the form below.</li>
+      <li>Save your point, and repeat from step 2 if needed.</li>
+      <li>Submit your map when you're ready!</li>
+    </ol>
+  </div>
+  <mains class="container">
   <section class="container__map">
     <form action="/create/map" method="POST" class="create__map">
-      <textarea name="title" placeholder="Write your map's name here" class="create__map__textarea"></textarea>
-      <input type="submit" value="Submit Map!">
+    <header class="container__header">
+      <textarea name="title" placeholder="Nice name here" class="create__map__textarea"></textarea>
+      <input id="create_map_button"type="submit" value="Submit my map!">
       </form>
+    </header>
         <div id="mymap"></div>
           <footer>
             <form action="/create/map" method="POST" class="create__point__form">
@@ -41,13 +53,13 @@
             <input type="text" name="title" placeholder="Point Title" id="point_title">
             <input type="text" name="address" placeholder="Point Description" id="point_description">
             <input type="url" name="image_url" placeholder="Point Image URL" id="point_image_url">
-            <input type="button" id="create_point_button" value="Create a Point">
+            <input type="button" id="create_point_button" value="Save my point">
             </div>
           </form>
           </footer>
         <button id="toggleAdd" class="active">Review points</button>
     </section>
-
+  </mains>
 </body>
 </html>
 

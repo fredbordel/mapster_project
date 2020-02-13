@@ -1,16 +1,7 @@
 
 
 $(() => {
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/api/users"
-  // }).done((users) => {
-  //   for(user of users) {
-  //     $("<div>").text(user.name).appendTo($("body"));
-  //   }
-  // });;
-
-
+let storageArr = []
 
   let mymap = L.map("mymap").setView([45.50, -73.56], 11);
   L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
@@ -36,9 +27,20 @@ $(() => {
       zoomLevel,
       title: $(".create__map__textarea").val()
     })
+
     .then(data => {
+
+      for (let i = 0; i < storageArr.length; i++) {
+        storageArr[i].map_id = data.response.rows[0].id
+
+      }
+
+        $.post('http://localhost:8080/create/point',{
+          storageArr
+        })
+
      const newMap = createNewMap(data.response.rows[0])
-      console.log(newMap)
+     storageArr = []
       window.location =  data.redirectUrl;
     })
   })
@@ -93,6 +95,15 @@ const enableAddPoint = function (e){
   }
 }
 
+const addPointToStorage = function (t,d,url,lat,lng) {
+
+    let point = {title: t,
+    description: d,
+    image_url: url,
+    lat: lat,
+    lng: lng}
+    storageArr.push(point)
+}
 
 
 $("#toggleAdd").click(()=> {
@@ -113,27 +124,38 @@ if($("#toggleAdd").hasClass('active')){
 $("#mymap").click(enableAddPoint)
 
 $('#create_point_button').click(function(){
-  $.post('http://localhost:8080/create/point',{
-  title: $("#point_title").val(),
-  description: $('#point_description').val(),
-  image_url: $('#point_image_url').val(),
-  lat: marker.getLatLng().lat,
-  lng: marker.getLatLng().lng
-  }).then(e =>{
-    const latLng = marker.getLatLng()
-    const anchorMarker = L.marker([latLng.lat, latLng.lng])
-    // let popup = L.popup()
-    // .setLatLng([latLng.lat, latLng.lng])
-    // .setContent(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}">`)
-    // .openOn(mymap)
-    anchorMarker.bindPopup(`<h4> ${$("#point_title").val()} </h4> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}" height=40>`).openPopup()
-    $('#point_description').val('')
-    $("#point_title").val('')
-    $('#point_image_url').val('')
-    marker = undefined
-  })
+  // $.post('http://localhost:8080/create/point',{
+
+  let title = $("#point_title").val();
+  let description = $('#point_description').val()
+  let image_url = $('#point_image_url').val()
+  let lat = marker.getLatLng().lat
+  let lng = marker.getLatLng().lng
+  addPointToStorage(title, description, image_url, lat,lng)
+  const latLng = marker.getLatLng()
+  const anchorMarker = L.marker([latLng.lat, latLng.lng])
+  let popup = L.popup()
+  .setLatLng([latLng.lat, latLng.lng])
+  .setContent(`<h4> ${$("#point_title").val()}
+  </h4> <br> <p> ${$('#point_description').val()}
+  </p> <br> <img src="${$('#point_image_url').val()}">`)
+  .openOn(mymap)
+  anchorMarker.bindPopup(`<h4> ${$("#point_title").val()} </h4> <button> modify </button> <br> <p> ${$('#point_description').val()} </p> <br> <img src="${$('#point_image_url').val()}" height=40> <button>Delete </button>`).openPopup()
+  $('#point_description').val('')
+  $("#point_title").val('')
+  $('#point_image_url').val('')
+  marker = undefined
+})
+
+
+// modify Map J query
+
+$(".map__footer__modify").click( (e) => {
+  $("modify__point").removeClass("hidden")
 
 })
+
+
 
 
 
