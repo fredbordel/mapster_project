@@ -33,7 +33,7 @@ $(() => {
     }).done((favorites) => {
       let i = 0;
       for(fav of favorites) {
-        $(".user_favorites").append(createFavoriteMap(fav, i));
+        $(".user_favorites").prepend(createFavoriteMap(fav, i));
         i++;
       }
   });
