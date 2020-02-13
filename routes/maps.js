@@ -36,10 +36,13 @@ module.exports = (db) => {
 // What does this function do: CREATE
 // This function adds a new map to database, then it redirects the user to the index page.
 router.post("/create/map", (req, res) => {
-  const values = [req.body.title, req.body.lat, req.body.long, req.body.zoomLevel];
-  db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level) VALUES ($1, $2, $3, $4) RETURNING *; `, values)
+  const values = [req.body.title, req.body.lat, req.body.long, req.body.zoomLevel, 1];
+  db.query(`INSERT INTO maps (title, latitude, longitude, zoom_level, user_id) VALUES ($1, $2, $3, $4, $5) RETURNING *; `, values)
   .then((response) => {
+    // let updatedResponse = response
+    // updatedResponse.rows[0].user_id = 1
     res.send({redirectUrl: "/", response})
+    console.log(response)
   })
 });
 

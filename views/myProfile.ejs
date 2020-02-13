@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
     <!-- StyleSheets from index.js example-->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -20,11 +20,38 @@
     <!--JS scripts from index.js example-->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/myProfile.js"></script>
 
   </head>
-
   <body>
-    <header>
+      <header class='header2'>
+          <div class='logoTitle'>
+              <a href="/"><img id="smallLogo" src="../images/Capture d’écran, le 2020-02-08 à 09.56.57.png", width="50" height="60"></img></a>
+              <p>PROFILE</p>
+          </div>
+          <div class='header__spans2'>
+               <span id='logged'>LOGGED IN AS</span>
+               <a href="/"><span id='createNew'>&#128073HOME</span></a>
+          </div>
+        </header>
+    <main class="user_profile">
+      <div class="user_profile__colum_headers">
+        <span> <h2>My Favorites</h2> </span>
+        <span> <h2>My Contributions</h2> </span>
+     </div>
+    <!-- Favourites Section -->
+    <section class="maps_container">
+    <section class="user_favorites"></section>
+    <!-- Contributions Section-->
+    <section class="user_contributions"></section>
+  </section>
+    <input type="button">Show More</input>
+  </main>
+  </body>
+  </html>
+
+
+  <!-- <header>
       <span>
         <img src="https://files.slack.com/files-pri/T2G8TE2E5-FTRC8SXM3/capture_d___e__cran__le_2020-02-08_a___09.56.57.png">
         <h1>My Profile</h1>
@@ -32,18 +59,10 @@
         <br>
         <a>Create a Map</a>
      </span>
-    </header>
+    </header> -->
 
-    <main class="user_profile">
-      <div class="user_profile__colum_headers">
-     <span> <h2>My Favorites</h2> </span>
 
-   <span> <h2>My Contributions</h2> </span>
-    </div>
-<!-- Favourites Section -->
-    <section class="user_favorites">
-    <section class="container__map">
-      <header class="map__header">
+    <!-- <header class="map__header">
         <span class="map__header__title">
       <h3>Title of Map</h3>
       </span>
@@ -51,43 +70,9 @@
         @Username
       </span>
     </header>
-    <!--Div needs to be empty and have an ID not class to work with leaflet-->
-      <div id="mymap"> </div>
-      <!-- Footer goes under leaflet map-div-->
-      <footer class="map__footer">
 
-        <button class="map__footer__modify"></button>
-      <button class="map__footer__favorite"> </button  >
+  <footer class="map__footer">
+       <button class="map__footer__modify"></button>
+       <button class="map__footer__favorite"> </button  >
     </footer>
-    </section>
-    <!-- Contributions Section-->
-   <section class="user_contributions">
-    <section>
-    <header class="map__header">
-      <span class="map__header__title">
-    <h3>Title of Map</h3>
-    </span>
-    <span class="map__header__handle">
-      @Username
-    </span>
-  </header>
-    <div class="map"></div>
-
-
-      <footer class="map__footer">
-
-          <button class="map__footer__modify"></button>
-        <button class="map__footer__favorite"> </button  >
-      </footer>
-    </section>
-
-  </section>
-  <input type="button"> Show More
-    </main>
-
-
-
-
-  </body>
-
-  </html>
+  -->

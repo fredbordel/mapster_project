@@ -54,7 +54,7 @@ let storageArr = []
       <span class="map__header__title">${mapData.title}</span>
       <span class="map__header__handle">@EMPTYFORNOW</span>
     </header>
-  <div id="mymap"></div>
+  <div id="mymap" class="mymap"></div>
   <script>
     let mymap = L.map("mymap").setView([${mapData.latitude}, ${mapData.longitude}], ${mapData.zoom_level});
     L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
@@ -66,7 +66,7 @@ let storageArr = []
     </script>
     <footer class="map__footer">
         <button class="map__footer__modify">MODIFY THIS MAP</button>
-        <button class="map__footer__favorite">ADD TO FAVORITE</button>
+        <button id="${mapData.id}" class="map__footer__favorite">ADD TO FAVORITE</button>
       </footer>
   </section>
   `

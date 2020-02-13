@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-
+let cookieSession = require('cookie-session')
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -30,6 +30,11 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
+app.use(cookieSession ({
+    name: 'securitaire',
+    keys: ['muhamara', 'camilo', 'telephone']
+}));
+
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
@@ -38,6 +43,7 @@ const widgetsRoutes = require("./routes/widgets");
 const mapRouter = require("./routes/maps");
 const loginRoutes = require('./routes/login')
 const pointRoutes = require('./routes/points')
+const favoriteRoutes = require('./routes/favorites');
 
 
 // Mount all resource routes
@@ -46,18 +52,14 @@ app.use(usersRouter(db));
 app.use(mapRouter(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use(pointRoutes(db));
+app.use(favoriteRoutes(db));
 
-
+// Note: mount other resources here, using the same pattern above
 // app.use("/api/maps", mapRoutes(db));
 // app.use("/", mapRoutes(db));
 // app.use("/create", mapRoutes(db));
-
 //app.use("/", loginRoutes(db));
 // app.use("/login/:id", loginRoutes(db));
-
-// Note: mount other resources here, using the same pattern above
-
-
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).

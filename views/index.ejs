@@ -24,12 +24,19 @@
       <button id="testbutton">Load Points</button>
       <img class='logo' src="images/mapster_logo_2.png" width="400" height="150"></img>
       <div class='header__spans'>
-      <span id='logged'>LOGGED IN AS</span>
+      <a href="/profile/1"><span id='logged'>MY PROFILE</span></a>
       <a href="http://localhost:8080/create/map"><span id='createNew'>&#128073CREATE NEW MAP</span></a>
       </div>
     </header>
   <main class="container" id="container">
     <div id="somemap"></div>
   </main>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/loadMaps.js"></script>
+    <script type="text/javascript" src="/scripts/loadFavorite.js"></script>
   </body>
 </html>
