@@ -121,6 +121,7 @@ if($("#toggleAdd").hasClass('active')){
 }
 })
 
+
 $("#mymap").click(enableAddPoint)
 
 $('#create_point_button').click(function(){

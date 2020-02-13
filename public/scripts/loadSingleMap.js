@@ -30,7 +30,7 @@
 
       </script>
       <footer class="map__footer">
-      <button class="map__footer__modify">MODIFY THIS MAP</button>
+      <a href="/modify/map/${mapData.id}"><button class="map__footer__modify">MODIFY THIS MAP</button></a>
       <button class="map__footer__favorite" id="${mapData.id}">ADD TO FAVORITE</button>
       </footer>
       </section>

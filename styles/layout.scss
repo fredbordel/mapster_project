@@ -146,7 +146,7 @@ text-align:center;
 }
 
 //_____________________
-// CREATE PAGE STYLING|
+// STYLING CREATE PAGE|
 //____________________|
 
 .map__footer__sumbit {
@@ -205,6 +205,24 @@ p {
   justify-content: space-between;
 }
 
+#toggleAdd {
+  padding:0.35rem 1.2rem;
+  border:0.1rem solid rgb(0, 0, 0);
+  margin:0 0.3rem 0.3rem 0;
+  border-radius:0.12rem;
+  box-sizing: border-box;
+  color:rgb(0, 0, 0);
+  text-align:center;
+}
+
+#toggleAdd:hover,
+#toggleAdd:focus {
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
+  color: rgb(250, 74, 61);
+  text-shadow: 0.09rem 0.09rem #000000;
+  cursor: pointer;
+}
 
 #create_point_button {
   padding:0.35rem 1.2rem;
@@ -283,6 +301,7 @@ textarea:focus, input:focus{
 .modify__point{
   display: flex;
 }
+
 //______________________
 // STYLING PROFILE PAGE|
 //_____________________|
@@ -323,4 +342,51 @@ margin: 3rem 1.5rem;
 .container__map__fav {
   margin: 3rem 0;
   margin-right: 3rem;
+}
+
+//______________________
+// STYLING MODIFY PAGE|
+//_____________________|
+
+.modify__point {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 3rem;
+  margin-top: 0.5rem;
+}
+
+#modify_point_button {
+  border: 0.1rem solid black;
+}
+
+#toggleModify {
+  margin-left: 7.5rem;
+  padding:0.35rem 1.2rem;
+  border:0.1rem solid rgb(0, 0, 0);
+  border-radius:0.12rem;
+  box-sizing: border-box;
+  color:rgb(0, 0, 0);
+  text-align:center;
+}
+
+#toggleModify:hover,
+#toggleModify:focus {
+  color: rgb(48, 230, 42);
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
+  text-shadow: 0.09rem 0.09rem #000000;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1030px) {
+  .modify__point  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 2rem;
+    }
+  #toggleModify {
+    margin-left: 2rem;
+  }
 }
