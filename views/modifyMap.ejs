@@ -33,7 +33,7 @@
           </div>
         </header>
         <form action="/modify/map/:id" method="POST" class="modify__point__form">
-          <div class="hidden modify__point">
+          <div id="#modify__point" class="hidden modify__point">
           <input type="text" name="title" placeholder="Modify Title" id="modify_title">
           <input type="text" name="address" placeholder="Modify Description" id="modify_description">
           <input type="url" name="image_url" placeholder="Modify Image URL" id="modify_image_url">
@@ -41,6 +41,7 @@
           <input type="button" id="modify_point_button" value="Save modifications">
           </div>
           <button id="toggleModify" >Modify a point</button>
+          <button id="delete_button">DELETE POINT</button>
         </form>
         <main class="container" id="container">
           <section class="container__map">
@@ -48,7 +49,6 @@
       </main>
       <script>
           loadSingleMap(<%= mapId %>)
-
       </script>
       </body>
     </html>

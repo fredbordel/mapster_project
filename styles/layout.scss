@@ -293,14 +293,12 @@ textarea:focus, input:focus{
   }
 }
 
-// Modify Page Styling
 
-.modify__point{
-  display: flex;
-}
 //______________________
 // STYLING PROFILE PAGE|
 //_____________________|
+
+
 
 
 .user_profile {
@@ -344,13 +342,6 @@ margin: 3rem 1.5rem;
 // STYLING MODIFY PAGE|
 //_____________________|
 
-.modify__point {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  margin-bottom: 3rem;
-  margin-top: 0.5rem;
-}
 
 #modify_point_button {
   border: 0.1rem solid black;
@@ -375,8 +366,34 @@ margin: 3rem 1.5rem;
   cursor: pointer;
 }
 
+#delete_button {
+  background-color: rgb(250, 76, 76);
+  margin-left: 7.5rem;
+  padding:0.35rem 1.2rem;
+  border:0.1rem solid rgb(0, 0, 0);
+  border-radius:0.12rem;
+  box-sizing: border-box;
+  color:rgb(0, 0, 0);
+  text-align:center;
+}
+
+#delete_button:hover,
+#delete_button:focus {
+  color: rgb(245, 69, 69);
+  box-shadow: 0 0.5rem 0.5rem -0.4rem var(--hover);
+  transform: translateX(-0.10rem);
+  text-shadow: 0.09rem 0.09rem #000000;
+  cursor: pointer;
+}
+
+#modify__point {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 8rem;
+}
+
 @media screen and (max-width: 1030px) {
-  .modify__point  {
+  #modify__point  {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -390,3 +407,6 @@ margin: 3rem 1.5rem;
 .hidden {
   display: none;
 }
+
+
+
