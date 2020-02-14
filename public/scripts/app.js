@@ -112,12 +112,20 @@ if($("#toggleAdd").hasClass('active')){
   $("#toggleAdd").removeClass('active')
   $("#mymap").off()
   $("#toggleAdd").text('Add Points')
+<<<<<<< HEAD
   $(".create__point").addClass("hidden");
+=======
+  $(".create__point").removeClass("hidden");
+>>>>>>> feature/routes
 } else {
   $("#toggleAdd").addClass('active')
   $("#mymap").click(enableAddPoint)
   $("#toggleAdd").text('Review Points')
+<<<<<<< HEAD
   $(".create__point").removeClass("hidden");
+=======
+  $(".create__point").addClass("hidden");
+>>>>>>> feature/routes
 }
 })
 
