@@ -13,9 +13,6 @@ $(() => {
   // }
 
 
-
-
-
    $.ajax({
      method: "GET",
      url: "/api/maps"
@@ -32,10 +29,10 @@ $(() => {
   return  `
   <section class="container__map">
   <header class="map__header">
-  <span class="map__header__title">${mapData.title}</span>
+  <a href="/map/${mapData.id}"><span class="map__header__title">${mapData.title}</span></a>
   <span class="map__header__handle">@EMPTYFORNOW</span>
   </header>
-  <div id="mymap${i}" class="mymap"></div>
+  <div id="mymap${i}" class="mymap" ></div>
   <script>
   let mymap${i} = L.map("mymap${i}").setView([${mapData.latitude}, ${mapData.longitude}], ${mapData.zoom_level});
   L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=7UYb6bOCvUG7YuJGjcqG', {
@@ -56,20 +53,24 @@ $(() => {
     }
   })
 
+  mymap${i}.scrollWheelZoom.disable();
+
+  mymap${i}.on('click', function() {
+    if (mymap${i}.scrollWheelZoom.enabled()) {
+      mymap${i}.scrollWheelZoom.disable();
+      }
+      else {
+        mymap${i}.scrollWheelZoom.enable();
+      }
+    });
+
   </script>
   <footer class="map__footer">
-  <button class="map__footer__modify">MODIFY THIS MAP</button>
-  <button class="map__footer__favorite">ADD TO FAVORITE</button>
+  <a href="/modify/map/${mapData.id}"><button class="map__footer__modify">MODIFY THIS MAP</button></a>
+  <button class="map__footer__favorite" id="${mapData.id}">ADD TO FAVORITE</button>
   </footer>
   </section>
   `
 };
-
-
-
-
-
-
-
 
 });

@@ -12,11 +12,13 @@
         <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
         <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
         <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
         <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
         <script type="text/javascript" src="/scripts/app.js"></script>
         <script type="text/javascript" src="/scripts/loadSingleMap.js"></script>
         <script type="text/javascript" src="/scripts/loadPoints.js"></script>
         <script type="text/javascript" src="/scripts/modifyMap.js"></script>
+        <script type="text/javascript" src="/scripts/loadFavorite.js"></script>
         <!-- LEAFLET JAVASCRIPT LIBRARY -->
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
@@ -26,28 +28,29 @@
         <header class='header'>
           <a href="/"><img class='logo' src="/images/mapster_logo_2.png" width="400" height="150"></img></a>
           <div class='header__spans'>
-          <span id='logged'>LOGGED IN AS</span>
+          <a href="/profile/1"><span id='logged'>MY PROFILE</span></a>
           <a href="http://localhost:8080/create/map"><span id='createNew'>&#128073CREATE NEW MAP</span></a>
           </div>
         </header>
-        <main class="container" id="container">
-          <section class="container__map">
-        <div id="somemap"></div>
-        <footer>
-          <form action="/modify/map/:id" method="POST" class="modify__point__form">
-          <div class="hidden modify__point">
+        <form action="/modify/map/:id" method="POST" class="modify__point__form">
+          <div class="modify__point">
           <input type="text" name="title" placeholder="Modify Title" id="modify_title">
           <input type="text" name="address" placeholder="Modify Description" id="modify_description">
           <input type="url" name="image_url" placeholder="Modify Image URL" id="modify_image_url">
-          <input type="button" id="modify_point_button" value="Modify a point">
+          <input type="button" id="modify_point_button" value="Save modifications">
           </div>
+          <button id="toggleModify">Modify a point</button>
         </form>
-        <button id="toggleAdd" class="active">Modify points</button>
-        </footer>
+        <main class="container" id="container">
+          <section class="container__map">
       </section>
       </main>
       <script>
           loadSingleMap(<%= mapId %>)
+          $("#toggleModify").click(function() {
+          $( ".modify__point" ).toggle( "slow", function() {
+  });
+});
       </script>
       </body>
     </html>

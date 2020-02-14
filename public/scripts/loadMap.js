@@ -1,16 +1,16 @@
 // $(() => {
-// debugger
-  // const loadMapPoints = function (mapId,i){
 
-  //   $.ajax({
-  //     method: "GET",
-  //     url: `/api/points/${mapId}`
-  //   }).then(points => {
-  //     for (const point of points) {
-  //       L.marker([point.latitude, point.longitude]).addTo(`mymap${i}`)
-  //     }
-  //   })
-  // }
+//   const loadMapPoints = function (mapId,i){
+
+//     $.ajax({
+//       method: "GET",
+//       url: `/api/points/${mapId}`
+//     }).then(points => {
+//       for (const point of points) {
+//         L.marker([point.latitude, point.longitude]).addTo(`mymap${i}`)
+//       }
+//     })
+//   }
 
 
 //    $.ajax({
@@ -32,7 +32,7 @@
 //   return  `
 //   <section class="container__map">
 //   <header class="map__header">
-//       <span class="map__header__title">${mapData.title}</span>
+//       <a href="/map/${mapData.id}"><span class="map__header__title">${mapData.title}</span></a>
 //       <span class="map__header__handle">@EMPTYFORNOW</span>
 //     </header>
 //   <div id="mymap${i}" class="mymap"></div>
