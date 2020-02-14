@@ -1,5 +1,3 @@
-![logo](mapster_project/public/screenshots/Capture d’écran, le 2020-02-14 à 14.55.16.png)
-
 MAPSTER - The map app you didn't know you needed! 
 =========
 
