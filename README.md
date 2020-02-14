@@ -7,8 +7,9 @@ your map to add there own personal touch, and 'like' your map so they never forg
 **PS: This app was made for learning purposes only by beginners who really enjoyed the process!
 
 ## What we used
-=========
+
 Front-end: ejs, css, html, jquery
+
 Back-end: express, sql, pg
 
 ## Getting Started
