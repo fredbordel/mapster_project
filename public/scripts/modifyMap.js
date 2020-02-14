@@ -15,7 +15,15 @@ $(() => {
     }
   })
 
+$("#delete_button").click(() => {
+  const  point_id = $("#hidden_point_id").val()
+  $.post(`/delete/point/${point_id}`, {
+    point_id
+  }).then(data => {
+    console.log(data)
 
+  })
+})
 
 
 
@@ -30,7 +38,9 @@ $("#modify_point_button").click(() => {
       image_url,
       id: point_id
     }).then(data => {
-      console.log(data)
+       $("#modify_title").val('');
+       $('#modify_description').val('')
+        $('#modify_image_url').val('')
     })
 })
 

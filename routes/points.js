@@ -61,6 +61,13 @@ module.exports = (db) => {
     }).catch(err => console.log(err))
   })
 
+  router.post("/modify/point/:id", (req , res) => {
+    point_id = req.body.id
+    db.query(`DELETE from points WHERE id = $1`, [point_id])
+    .then(data => {
+      res.json(data)
+    }).catch(err => console.log(err))
+  })
 
 
   return router;
