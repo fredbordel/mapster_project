@@ -42,7 +42,6 @@ router.post("/create/map", (req, res) => {
     // let updatedResponse = response
     // updatedResponse.rows[0].user_id = 1
     res.send({redirectUrl: "/", response})
-    console.log(response)
   })
 });
 
@@ -68,6 +67,18 @@ router.post("/create/map", (req, res) => {
     let mapId = req.params.id
     res.render("modifyMap", { mapId });
   })
+
+  router.get("/api/modify/map/:id/markers", (req, res) => {
+    let mapId = req.params.id
+    console.log(mapId)
+    db.query("SELECT * FROM points WHERE map_id = $1", [mapId])
+      .then(data => {
+        console.log("data", data)
+        res.json({data})
+      })
+
+  })
+
 
   router.post("/modify/map/:id", (req, res) => {
     let mapId = req.params.id
