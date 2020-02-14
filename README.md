@@ -4,7 +4,8 @@ MAPSTER - The map app you didn't know you needed!
 You think you know all the best places to have a drink in your town? Share it with others with Mapster!
 Mapster lets you create YOUR personalize map that you can share with others on the platform. Other users can modify 
 your map to add there own personal touch, and 'like' your map so they never forget about it. Enjoy!
-**PS: This app was made for learning purposes only by beginners who really enjoyed the process!
+
+**PS: This app was made for learning purposes only by beginners who really enjoyed the process!**
 
 ## What we used
 
