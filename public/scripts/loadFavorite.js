@@ -6,7 +6,7 @@ $("body").on("click",".map__footer__favorite", function(event) {
     url: "/favorites",
     data: {id: event.target.id}
   }).then(() => {
-    $(this).css("background-color", "grey")
+    $(this).css("background-color", "rgb(245, 69, 69)")
   });
 });
 });

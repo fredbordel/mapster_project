@@ -6,17 +6,19 @@ $(() => {
   // User clicks on a marker:
 
   // make the map toggle down
-  $("#toggleModify").click(() => {
-    if($("#toggleModify").hasClass("active")){
-      $(".modify__point__form").removeClass("hidden")
-    } else {
-      $("#toggleModify").addClass("active")
-      $(".modify__point__form").removeClass("hidden")
-    }
-  })
+  // $("#toggleModify").click(() => {
+  //   if($("#toggleModify").hasClass("active")){
+  //     $(".modify__point__form").removeClass("hidden")
+  //   } else {
+  //     $("#toggleModify").addClass("active")
+  //     $(".modify__point__form").removeClass("hidden")
+  //   }
+  // })
 
-$("#delete_button").click(() => {
+$("#delete_button").click((event) => {
+  event.preventDefault()
   const  point_id = $("#hidden_point_id").val()
+  console.log(point_id)
   $.post(`/delete/point/${point_id}`, {
     point_id
   }).then(data => {

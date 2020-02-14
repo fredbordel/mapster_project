@@ -54,14 +54,15 @@ const addMapToPage = function(mapData, i) {
         currentMarker.marker_id = point.id
         currentMarker.map_id = point.map_id;
         mapMarker.push(currentMarker)
+        addMarkerListeners(mapMarker);
       }
-      addMarkerListeners(mapMarker);
     })
 }
 
 const addMarkerListeners = function (mapMarker){
   for(let i = 0; i < mapMarker.length; i++){
     console.log(mapMarker)
+    console.log(mapMarker[i])
     $(mapMarker[i]).click((event) => {
       console.log(mapMarker[i].marker_id)
       $.ajax(`http://localhost:8080/api/modify/map/${mapMarker[i].map_id}/markers`,{
@@ -71,9 +72,9 @@ const addMarkerListeners = function (mapMarker){
           $("#toggleModify").click(function() {
             $( ".modify__point" ).toggle( "slow")
           });
-          $("#hidden_point_id").val(data.data.rows[0].id)
-
-          mapMarker[i].bindPopup(`<div id="popup_div"> <h3> ${data.data.rows[0].title}</h3> <p>${data.data.rows[0].description}</p> <img src="${data.data.rows[0].image_url}" height=40> </div>`).openPopup()
+          $("#hidden_point_id").val(data.data.rows[i].id)
+          console.log(data.data.rows[i])
+          mapMarker[i].bindPopup(`<div id="popup_div"> <h3> ${data.data.rows[i].title}</h3> <p>${data.data.rows[i].description}</p> <img src="${data.data.rows[i].image_url}" height=40> </div>`).openPopup()
       }).catch(e => console.log(e))
     })
   }
