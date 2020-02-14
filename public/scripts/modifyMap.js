@@ -6,7 +6,7 @@ $(() => {
   // User clicks on a marker:
 
   // make the map toggle down
-  $("#toggleModify").click( (e) => {
+  $("#toggleModify").click(() => {
     if($("#toggleModify").hasClass("active")){
       $(".modify__point__form").removeClass("hidden")
     } else {
