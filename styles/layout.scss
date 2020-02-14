@@ -141,9 +141,6 @@ text-align:center;
 }
 
 
-.hidden{
-  display: none;
-}
 
 //_____________________
 // STYLING CREATE PAGE|
@@ -388,4 +385,8 @@ margin: 3rem 1.5rem;
   #toggleModify {
     margin-left: 2rem;
   }
+}
+
+.hidden {
+  display: none;
 }

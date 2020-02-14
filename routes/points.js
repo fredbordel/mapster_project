@@ -48,6 +48,19 @@ module.exports = (db) => {
       }
   })
 
+  router.post("/modify/point/:id", (req , res) => {
+    let values = [req.body.title, req.body.description, req.body.image_url, req.body.id];
+    console.log(values)
+    db.query(`UPDATE points
+    SET title = $1,
+        description = $2,
+        image_url = $3
+    WHERE id = $4 RETURNING *;`, values)
+    .then(data => {
+      res.json(data)
+    }).catch(err => console.log(err))
+  })
+
 
 
   return router;

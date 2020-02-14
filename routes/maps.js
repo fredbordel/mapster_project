@@ -70,10 +70,10 @@ router.post("/create/map", (req, res) => {
 
   router.get("/api/modify/map/:id/markers", (req, res) => {
     let mapId = req.params.id
-    console.log(mapId)
+
     db.query("SELECT * FROM points WHERE map_id = $1", [mapId])
       .then(data => {
-        console.log("data", data)
+
         res.json({data})
       })
 

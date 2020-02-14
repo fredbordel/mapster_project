@@ -15,6 +15,25 @@ $(() => {
     }
   })
 
+
+
+
+
+$("#modify_point_button").click(() => {
+  let title = $("#modify_title").val();
+  let description = $('#modify_description').val()
+  let image_url = $('#modify_image_url').val()
+  let point_id = $("#hidden_point_id").val()
+    $.post(`/modify/point/${point_id}`, {
+      title,
+      description,
+      image_url,
+      id: point_id
+    }).then(data => {
+      console.log(data)
+    })
+})
+
   // should there be some sort of class that is toggeled on click so
   // for(let i = 0; i < chicken.length; i++){
   //   console.log(chicken)
@@ -58,4 +77,4 @@ $(() => {
 
 // })
 
-})
+});
