@@ -1,4 +1,4 @@
-MAPSTER - The map app you didn't know you needed! 
+MAPSTER 
 =========
 
 You think you know all the best places to have a drink in your town? Share it with others with Mapster!
