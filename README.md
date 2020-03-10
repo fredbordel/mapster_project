@@ -7,6 +7,10 @@ your map to add there own personal touch, and 'like' your map so they never forg
 
 **PS: This app was made for learning purposes only by beginners who really enjoyed the process!**
 
+!["mapster_homepage"](https://github.com/fredbordel/mapster_project/blob/master/docs/mapster_homepage.png?raw=true)
+!["mapster_create"](https://github.com/fredbordel/mapster_project/blob/master/docs/mapster_create.png?raw=true)
+!["mapster_logo"](https://github.com/fredbordel/mapster_project/blob/master/docs/mapster_logo.png?raw=true)
+
 ## What we used
 
 Front-end: ejs, css, html, jquery
